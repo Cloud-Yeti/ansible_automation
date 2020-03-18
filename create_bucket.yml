@@ -1,0 +1,22 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - keys.yml
+  tasks:
+    - name: Create a new S3 bucket
+      aws_s3:
+        aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
+        aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
+        ec2_region: "{{ AWS_REGION }}"
+        bucket: demo-bucket
+        mode: create
+        
+     - name: Add file to a bucket
+       aws_s3:
+         aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
+         aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
+         ec2_region: "{{ AWS_REGION }}"
+         bucket: demo-bucket-for-cloudyeti
+         mode: put
+         object: /test.txt
+         src: /home/ec2-user/test.txt
