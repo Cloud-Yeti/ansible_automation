@@ -5,5 +5,5 @@
   * From linux knowledge, the host file is situated at /etc/hosts that matches IP addresses to domain names
   * Similar to that, Ansible Inventory file matches servers which may include IP addresses or domain names ---> to groups.
   * We need to update the /etc/ansible/hosts file in order to add server to it; see the below example
-    [cloudyeti_group]
-    www.cloudyeti.com
+          [cloudyeti_group]
+          www.cloudyeti.com
