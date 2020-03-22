@@ -2,7 +2,7 @@
   * sudo yum update -y
   * sudo yum install -y python-boto python-boto3
   * rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-  * suod yum install ansible -y
+  * sudo yum install ansible -y
   
 #### Install ansible on a Mac
   * Check if pip is already installed in your mac (which pip). In case you don't have it, try sudo easy_install pip
