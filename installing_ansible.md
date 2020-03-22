@@ -2,6 +2,7 @@
   * sudo yum update -y
   * sudo yum install -y python-boto python-boto3
   * rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  * sudo amazon-linux-extras install ansible2 -y  # for amazon-linux2
   * sudo yum install ansible -y
   
 #### Install ansible on a Mac
