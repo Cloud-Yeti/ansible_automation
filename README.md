@@ -10,4 +10,5 @@
           www.cloudyeti.com
           
 ```
+  * Ansible documentation page: https://docs.ansible.com/ansible/latest/network/getting_started/basic_concepts.html
   * Dynamic Inventory for AWS EC2: https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory#inventory-script-example-aws-ec2
