@@ -1,0 +1,24 @@
+---
+- name: Installing httpd
+  hosts: hosts
+  become: true
+  tasks:
+    - name: Installing httpd
+      yum:
+        name: httpd
+        state: present
+    - name: Copying the file
+      copy:
+        src: /home/ec2-user/files/httpd.conf
+        dest: /var/www/html/index.html
+        mode: 0644
+        backup: yes
+    - name: Starting the service
+      service:
+        name: httpd
+        state: started
+    - script: ~/scripts/tomcat_jenkins_script.sh
+      register: result
+
+    - debug:
+        var: result.stdout

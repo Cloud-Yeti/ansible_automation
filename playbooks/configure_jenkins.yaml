@@ -1,0 +1,10 @@
+---
+- name: Configuring jenkins
+  hosts: host
+  become: true
+  tasks:
+    - script: ~/scripts/tomcat_jenkins_script.sh
+      register: result
+
+    - debug:
+        var: result.stdout
