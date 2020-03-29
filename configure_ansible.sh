@@ -16,6 +16,7 @@ sudo pip install boto
 # cd ~/ && ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
 # cat ~/.ssh/id_rsa.pub | sed 's/^/{"/;s/$/"}/' | sed 's/ssh-rsa/pub_key\":\ "ssh-rsa/g' > ~/my_creds.json
 # aws secretsmanager create-secret --name MyAnsibleSecretCred --description "My public key of ansible master" --secret-string file://my_creds.json --region us-east-1
+# rm -rf ~/my_creds.json
 #========================================================================#
 # add below command on Managed Nodes #
 # sudo yum install jq -y
