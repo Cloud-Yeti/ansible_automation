@@ -1,7 +1,7 @@
 #========================================================================#
 #### Below example shows how secrets manger can be used to copy ssh-keys #
 #### The Secrets Manger access should be provided both for control node and managed node #
-#### add below command on Condrol Node #
+# add below command on Condrol Node #
 #### cd ~/ && ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
 #### cat ~/.ssh/id_rsa.pub | sed 's/^/{"/;s/$/"}/' | sed 's/ssh-rsa/pub_key\":\ "ssh-rsa/g' > ~/my_creds.json
 #### aws secretsmanager create-secret --name MyAnsibleSecretCred --description "My public key of ansible master" --secret-string file://my_creds.json --region us-east-1
