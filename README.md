@@ -12,3 +12,11 @@
 ```
   * Ansible documentation page: https://docs.ansible.com/ansible/latest/network/getting_started/basic_concepts.html
   * Dynamic Inventory for AWS EC2: https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory#inventory-script-example-aws-ec2
+#### Limit to one host
+  * ansible-playbook playbooks/PLAYBOOK_NAME.yml --limit "host1"
+#### Limit to multiple hosts
+  * ansible-playbook playbooks/PLAYBOOK_NAME.yml --limit "host1,host2"
+  * Negated limit. NOTE: Single quotes MUST be used to prevent bash interpolation.
+  * ansible-playbook playbooks/PLAYBOOK_NAME.yml --limit 'all:!host1'
+#### Limit to host group
+  * ansible-playbook playbooks/PLAYBOOK_NAME.yml --limit 'group1'
