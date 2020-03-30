@@ -17,8 +17,4 @@
       service:
         name: httpd
         state: started
-    - script: ~/scripts/tomcat_jenkins_script.sh
-      register: result
 
-    - debug:
-        var: result.stdout
