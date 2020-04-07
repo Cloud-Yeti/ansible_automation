@@ -1,0 +1,18 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create s3 bucket facts
+      set_fact:
+        mybucket_name: "demo-bucket-basdlifjalsdkjfl"
+    - name: Create a new S3 bucket
+      aws_s3:
+        ec2_region: "{{ AWS_REGION }}"
+        bucket: "{{ mybucket_name }}"
+        mode: create
+    - name: Add file to the bucket
+      aws_s3:
+        ec2_region: "{{ AWS_REGION }}"
+        bucket: "{{ mybucket_name }}"
+        mode: put
+        object: test.txt
+        src: /usr/share/tomcat/.jenkins/workspace/ansible/files/test.txt
