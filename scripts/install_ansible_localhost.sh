@@ -6,6 +6,7 @@ sudo amazon-linux-extras install ansible2 -y
 sudo yum install -y git python python-devel python-pip openssl ansible
 yum install ansible -y
 sudo pip install boto
+sudo mv /etc/ansible/ansible.cfg /etc/ansible/ansible.backup
 sudo bash -c "cat /etc/ansible/ansible.cfg | sed 's/basic default values.../basic default values...\ninventory      = \/etc\/ansible\/hosts/g' | sed 's/basic default values...\nsudo_user     = root/g' > /etc/ansible/ansible.cfg.replacement"
 sudo cp /etc/ansible/ansible.cfg.replacement /etc/ansible/ansible.cfg
 sudo mv /etc/ansible/hosts /etc/hosts.original
