@@ -9,6 +9,6 @@
 #========================================================================#
 # add below command on Managed Nodes #
 #### sudo yum install jq -y
-#### aws secretsmanager get-secret-value --secret-id MyAnsibleSecret --region us-east-1 | jq ".SecretString" | sed 's/\\n //g; s/\ \n//g; s/\\"/"/g; s/"\\n/"/g; s/^"//; s/"$//' | jq ".pub_key" | sed 's/\"//g' >> ~/.ssh/authorized_keys
+#### aws secretsmanager get-secret-value --secret-id MyAnsibleSecret --region us-east-1 | jq ".SecretString" | sed 's/[\]//g' | sed 's/.//' | sed  's/.$//' | jq ".pub_key" | sed 's/"//g' >> ~/.ssh/authorized_keys
 # use below command to delete the secrets from secrets manager
 #### aws secretsmanager delete-secret --secret-id MyAnsibleSecret --region us-east-1
