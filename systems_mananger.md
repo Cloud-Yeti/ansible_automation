@@ -1,6 +1,6 @@
 # Systems Manager
  
-#### The New AWS AMI's comes with ssm agent preconfigured. If not, use below steps:-
+#### The New AWS AMI's comes with ssm agent preconfigured. But, if you aren't using latest AMI. Follow below commands for installation of SSM agent:-
 ```
 sudo yum install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 sudo systemctl enable amazon-ssm-agent
