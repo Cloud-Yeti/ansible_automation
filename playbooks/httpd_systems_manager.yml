@@ -1,6 +1,4 @@
----
-- name: Installing httpd
-  hosts: all
+- hosts: localhost
   become: true
   tasks:
     - name: Installing httpd
